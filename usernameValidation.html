@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Username validation by javaScipt</title>
+	<script type="text/javascript">
+		function usernameValidation(mn,mx){
+			var inputText=document.form1.username;
+			var text=/^[a-zA-Z0-9._-]+$/;
+			var len=inputText.value.length;
+			if(inputText.value.match(text) && len<=mx && len>=mn)
+			{
+				alert("Username is ok ");
+				return true;
+			}
+			else{
+				alert("Username must be A-Z a-z 0-9 . _  and must be "+mn+ " to "+mx);
+				return false;
+			}
+		}
+	</script>
+</head>
+<body onload="document.form1.username.focus()">
+<form name="form1" method="post" action="">
+	
+ <table>
+ 	<tr>
+ 		<td>User name:</td>
+ 		<td><input type="text" name="username" onblur="usernameValidation(3,15)"></td>
+ 	</tr>
+ </table>
+</form>
+</body>
+</html>

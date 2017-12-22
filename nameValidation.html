@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+<head>
+<title>Name Validation by javaScript</title>
+<script>
+	function nameValidation(mn,mx){
+					inputText=document.form1.name;
+					var text=/^[a-zA-Z]+$/;
+					var len=inputText.value.length;
+					if(inputText.value.match(text) && len>=mn && len<=mx)
+					{
+						alert("ok the value is "+inputText.value);
+						//document.form1.username.focus();
+						return true;
+					}
+					else{
+						alert("Name must be alphabet character between "+mn+" to "+mx);
+						document.form1.name.focus();
+						return false;
+					}
+				}
+</script>
+</head>
+<body onload="document.form1.name.focus()">
+	<form name="form1" method="post" action="">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td>
+					<input type="text" name="name" onblur="nameValidation(5,10)">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation By javaScipt</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/formValidation.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/formValidation.css">
+</head >
+<body onload='firstfocus()'>
+<form name="form1" action="">
+	
+	<table>
+		<tr>
+				<td>Name:</td>
+				<td>
+					<input type="text" name="name" onblur="nameValidation(5,10)">
+				</td>
+		</tr>
+		<tr>
+			<td>User name:</td>
+ 			<td><input type="text" name="username" onblur="usernameValidation(3,15)"></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password" onblur="passwordValidation(6,10)"></td>
+		</tr>
+		<tr>
+			<td>Confirm password: </td>
+			<td>
+				<input type="password" name="confirmPassword" onblur="confirmPasswordValidation()">
+			</td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input id="em" type="text" name="email"  onblur="ValidateEmail(document.form1.email)"></td>
+		</tr>
+		<tr>
+			<td>Phone:</td>
+			<td><input type="text" name="phone" onblur="phoneValidation()"></td>
+		</tr>
+		<tr>
+			
+			<td colspan="2"><center><input type="submit" name="submit" value="Submit" onclick ="check()"></center></td>
+		</tr> 
+	</table>
+</form>
+</body>
+</html>
